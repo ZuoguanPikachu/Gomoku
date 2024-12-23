@@ -1,0 +1,32 @@
+﻿<Window x:Class="GomokuAI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:GomokuAI"
+        mc:Ignorable="d"
+        Title="Gomoku" Height="842" Width="1180" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" FontFamily="Consolas">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Canvas x:Name="chessBoardCanvas" Width="800" Height="800" Cursor="Hand" MouseUp="PlaceStoneOnBoard">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/assets/bg.jpg" Stretch="Uniform"/>
+            </Canvas.Background>
+        </Canvas>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8">
+            <TextBox
+                x:Name="NotationTextBox" 
+                Width="347" 
+                Height="200" 
+                AcceptsReturn="True" 
+                TextWrapping="Wrap" 
+                VerticalScrollBarVisibility="Visible"
+                VerticalContentAlignment="Top"
+                Padding="4"
+            />
+            <Button x:Name="DropBtn" Content="Drop Notation" Padding="50, 0" Click="PlaceStonesFromNotation"  Margin="16"/>
+            <Button x:Name="ResetBtn" Content="Reset" Padding="50, 0" Click="ResetGame"  Margin="16"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
